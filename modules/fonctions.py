@@ -1,6 +1,8 @@
 import logging
-
-#Vérification d'un temps positif
+"""
+Vérification d'un temps positif
+:param a: l'argument que l'on va vérifier
+"""
 def verification_du_temps(argumentAVerifier):
     try:
         logging.info("Utilisation de la fonction pour vérifier que le temps est un entier positif")
@@ -13,8 +15,10 @@ def verification_du_temps(argumentAVerifier):
         exit()
             
     
-    
-#Vérification de la quantité (Pourcentage d'un genre)
+"""
+Vérification de la quantité (Pourcentage d'un genre)
+:param a: le paramétre auquel ont vérifie la quantite
+"""
 def verifier_mes_quantite(quantite):
     try:
         logging.info("Mise en marche de la fonction des vérification des quantités")
@@ -28,8 +32,10 @@ def verifier_mes_quantite(quantite):
         exit()
             
 
-
-#Gestion des pourcentages pour plusieurs genres
+"""
+Gestion des pourcentages pour plusieurs genres
+:param a: paramétre affecté à la gestion de pourcentage (2 args)
+"""
 def gestionPourcentage(typeArg):
     logging.info("Mise en marche de la fonction des vérification des pourcentages")
     i = 0
@@ -43,9 +49,8 @@ def gestionPourcentage(typeArg):
         logging.info("Utilisation de la fonction pour vérifier que le pourcentage est entre 0 et 100")
         
         #Vérification du pourcentage
-        quantite = verifier_mes_quantite(typeArg[i][1])
-        logging.info("La quantite pour le genre est " + str(quantite) + ".")
-        somme = somme + quantite
+        quantite1 = verifier_mes_quantite(typeArg[i][1])
+        somme = somme + quantite1
         ligneListe = ligneListe + 1
         i = i + 1
     logging.info("La sommes totale des genres est de : " + str(somme) +".")

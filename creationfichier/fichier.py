@@ -1,4 +1,8 @@
-#Création d'un fichier au format M3U recuperant la playlist généré préalablement
+"""
+Création d'un fichier au format M3U recuperant la playlist généré préalablement
+:param a: les arguments
+:param b: les musiques de la playlist
+"""
 def M3U(args, musiquePlayList): #Arguments, et la playlist)
     
     #Nommage du fichier au demande l'utilisateur
@@ -15,7 +19,11 @@ def M3U(args, musiquePlayList): #Arguments, et la playlist)
     fichier.close()
 
 
-#Création d'un fichier au format XSPF recuperant la playlist généré préalablement
+"""
+Création d'un fichier au format XSPF recuperant la playlist généré préalablement
+:param a: les arguments
+:param b: les musiques de la playlist
+"""
 def XSPF(args, musiquePlayList):
     #Nommage du fichier au demande l'utilisateur
     fichierxspf1 = (args.nomFichierPlaylist + "." + args.formatPlaylist)
@@ -40,7 +48,11 @@ def XSPF(args, musiquePlayList):
     fichierxspf.close()
 
 
-#Création d'un fichier au format PLS recuperant la playlist généré préalablement 
+"""
+Création d'un fichier au format PLS recuperant la playlist généré préalablement
+:param a: les arguments
+:param b: les musiques de la playlist
+"""
 def PLS(args, musiquePlayList):
     i=1
     #Nommage du fichier au demande l'utilisateur

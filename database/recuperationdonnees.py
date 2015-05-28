@@ -9,7 +9,11 @@ argument_cli = ['titrePlaylist','artistePlaylist','albumPlaylist','genrePlaylist
 #Définition de la playlist
 musiquePlayList =[] #Musique PlayList
 
-#Fonction permettant de récupérer des données dans la BDD par rapport aux besoins de l'utilisateur
+"""
+Fonction permettant de récupérer des données dans la BDD par rapport aux besoins de l'utilisateur
+:param a: les arguments saisis par l'utilisateur
+"""
+
 def recupererDonnees(args):
     for attribut in argument_cli:
         if getattr(args, attribut) is not None:
@@ -54,8 +58,10 @@ def recupererDonnees(args):
                         duree -= champBDD[5] 
                         #Correspond au champ durée dans la BDD
                           
-
-#Génération de la liste de playlist
+"""
+Génération de la liste de playlist
+:param a: la liste des arguments saisis par l'utilisateur
+"""
 def generationPlaylist(args):
     i = 0
     for attribut in argument_cli:
@@ -65,7 +71,11 @@ def generationPlaylist(args):
                     musiquePlayList.insert(i, [musique[0], musique[2], musique[1], musique[5], musique[8]])
                     i += 1
     random.shuffle(musiquePlayList) #On mélange les musiques aléatoirement
-        
+    
+"""
+Toutes les vérifications pour mener à bien l'éxecution du programme.
+:param a: liste des arguments
+"""
 def Playlist(args):
     duree = 0 #initialisation à 0
     for musique in musiquePlayList: #Pour chaque musique dans la playlist selon un genre précis
@@ -86,7 +96,13 @@ def Playlist(args):
         else:
             duree -= musique[5] # Si ce n'est pas le cas, on enlève la musique et on en sélectionne une moins grande pour compléter la playlist avec le moins d'écart possible
     return duree
-def EcritureFichier(args, musiquePlayList): #On gére l'écriture du fichier dans les 3 formats proposés
+
+"""
+On gére l'écriture du fichier dans les 3 formats proposés
+:param a: les arguments
+:param b: les musiques de la playlist
+"""
+def EcritureFichier(args, musiquePlayList):
     if(args.formatPlaylist == 'm3u'):
         M3U(args, musiquePlayList)
     if(args.formatPlaylist == 'xspf'):

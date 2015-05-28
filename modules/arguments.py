@@ -3,15 +3,17 @@ import argparse
 # On initialise un parser
 parser = argparse.ArgumentParser()
 
-
-#Fonction avec les arguments principaux du générateur de playlist
+"""
+Fonction avec les arguments principaux du générateur de playlist
+"""
 def arguments_generals():
     parser.add_argument("dureePlaylist", type = int, help="duree de la playlist en minutes")
     parser.add_argument("formatPlaylist", choices = ["m3u","xspf","pls"], help="format de sortie de la playlist")
     parser.add_argument("nomFichierPlaylist", help="nom du fichier de sortie")
 
-
-#Fonction avec les arguments optionnels  du générateur de playlist
+"""
+Fonction avec les arguments optionnels  du générateur de playlist
+"""
 def arguments_optionnels():
     parser.add_argument("-t", "--titrePlaylist", action='append', help="titre choisis",nargs=2)
     parser.add_argument("-ar", "--artistePlaylist", action='append', help="nom de l'artiste",nargs=2)
